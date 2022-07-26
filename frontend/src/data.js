@@ -1,6 +1,23 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'Kaveesha',
+      email: 'admin@example.com',
+      password:bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Pasindu ',
+      email: 'admin@example.com',
+      password:bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
+      //_id: '1',
       name: 'Bill Books',
       slug: 'bill-books',
       category: 'Offset Printing',
@@ -12,6 +29,7 @@ const data = {
       description: 'High Quality',
     },
     {
+      //_id: '2',
       name: 'Posters',
       slug: 'posters',
       category: 'Digital Printing',
@@ -23,6 +41,7 @@ const data = {
       description: 'High Quality',
     },
     {
+      //_id: '3',
       name: 'Mug Printing',
       slug: 'mug-printing',
       category: '',
@@ -34,6 +53,7 @@ const data = {
       description: 'High Quality',
     },
     {
+      //_id: '4',
       name: 'Invitation Cards',
       slug: 'invitation-cards',
       category: 'Invitation Cards',

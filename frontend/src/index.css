@@ -15,8 +15,8 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #FF0000;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 header {
@@ -72,8 +72,8 @@ main {
   color: #a0a0a0;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #FF0000;
-  color: #FF0000;
+  border-bottom: 0.2rem solid #ff0000;
+  color: #ff0000;
 }
 
 /* sidebar */

@@ -28,13 +28,14 @@ function HomeScreen() {
     loading: true,
     error: '',
   });
-  // const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const result = await axios.get('/api/products');
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+        console.log(result);
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
@@ -48,6 +49,7 @@ function HomeScreen() {
       <Helmet>
         <title>GoodLuck Print House</title>
       </Helmet>
+      <img src=".../public/images/Logo.png" alt="goodluck logo"></img>
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
@@ -62,7 +64,7 @@ function HomeScreen() {
               </Col>
             ))}
           </Row>
-        )} 
+        )}
       </div>
     </div>
   );

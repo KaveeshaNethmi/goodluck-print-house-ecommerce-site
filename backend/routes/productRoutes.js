@@ -7,6 +7,7 @@ const productRouter = express.Router();
 
 productRouter.get('/', async (req, res) => {
   const products = await Product.find();
+  console.log(products);
   res.send(products);
 });
 
@@ -28,6 +29,7 @@ productRouter.post(
       description: 'sample description',
     });
     const product = await newProduct.save();
+    console.log('product', product);
     res.send({ message: 'Product Created', product });
   })
 );

@@ -16,6 +16,7 @@ import { getError } from '../utils';
 import { Store } from '../Store';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { toast } from 'react-toastify';
+import AddFile from '../components/AddFile';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -145,7 +146,7 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Pirce: LKR {product.price}</ListGroup.Item>
             <ListGroup.Item>
               <Row xs={1} md={2} className="g-2">
                 {[product.image, ...product.images].map((x) => (
@@ -177,7 +178,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
-                    <Col>${product.price}</Col>
+                    <Col>LKR {product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -189,6 +190,67 @@ function ProductScreen() {
                       ) : (
                         <Badge bg="danger">Unavailable</Badge>
                       )}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Content:</Col>
+                    <Col>
+                      <input type="textarea" 
+                      name="textValue"
+                      placeholder='Details Should be added'
+                      onChange={addToCartHandler} />
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Upload File:</Col>
+                    <Col>
+                    
+                      <input type="file" name="file" onChange={addToCartHandler} />
+                      <div>
+                        <button onClick={addToCartHandler} className='btn-primary'>Submit</button>
+                      </div>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Amount:</Col>
+                    <Col>
+                      <input type="text" 
+                      name="textValue"
+                      placeholder='Amount'
+                      onChange={addToCartHandler} />
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Type:</Col>
+                    <Col>
+                    <Form.Group className="mb-3" controlId="product-type">
+                      <Form.Select
+                        aria-label="Type"
+                        onChange={addToCartHandler} >
+                        <option value=""> One Color </option>
+                        <option value="2">Two Color</option>
+                        <option value="3">Four Color</option>
+                      </Form.Select>
+                    </Form.Group>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Total Cost:</Col>
+                    <Col>
+                      <input type="text" 
+                      name="textValue"
+                      placeholder='Amount'
+                      onChange={addToCartHandler} />
                     </Col>
                   </Row>
                 </ListGroup.Item>

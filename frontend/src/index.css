@@ -48,6 +48,12 @@ main {
   margin: 1rem;
 }
 
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .product img {
   width: 290px;
   height: 350px;
@@ -59,6 +65,10 @@ main {
 
 .img-large {
   max-width: 100%;
+}
+
+.img-medium{
+  max-width: 90%;
 }
 .img-thumbnail {
   height: 80px;

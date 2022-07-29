@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 // import data from '../data';
+import image from '../Logo.png';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -49,7 +50,10 @@ function HomeScreen() {
       <Helmet>
         <title>GoodLuck Print House</title>
       </Helmet>
-      <img src=".../public/images/Logo.png" alt="goodluck logo"></img>
+      <div className='logo'>
+        <img src={image} width={450} height={400} alt='GoodLuck Logo' />
+      </div>
+      
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
